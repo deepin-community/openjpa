@@ -1,0 +1,11 @@
+
+
+The upstream tarball has been modified as follows, to comply with DFSG:
+
+  * websphere_uow_api-0.0.1.* files were removed since those are part of
+    IBM Websphere Application Server and this software is non-free.
+    Those files were located at this directory:
+    apache-openjpa-2.0.0-source/openjpa-kernel/internal-repository/com/ibm/websphere/websphere_uow_api/0.0.1
+
+ -- Miguel Landaeta <miguel@miguel.cc>  Fri, 28 May 2010 20:50:47 -0430
+

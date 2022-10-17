@@ -1,0 +1,133 @@
+Apache OpenJPA 2.4.2
+Licensed under Apache License 2.0 - http://www.apache.org/licenses/LICENSE-2.0
+--------------------------------------------------------------------------------
+
+Content
+-------
+   * Overview
+   * License
+   * Notices
+   * Prerequisites
+   * Documentation
+   * Getting Involved
+   * Included Changes
+     * Sub-tasks
+     * Bugs
+     * Improvements
+     * New Features
+     * Test
+
+
+Overview
+--------
+   The Apache OpenJPA community is proud to release a SNAPSHOT distribution of
+   OpenJPA 2.4.2. This distribution is based on the final JSR 317 Java 
+   Persistence API, Version 2.0 specification and passes the JPA 2.0 TCK,
+   while remaining backwards compatible with prior releases based on the
+   Java Persistence API (JPA 1.0) part of Java Community Process JSR-220
+   (Enterprise JavaBeans 3.0).
+   
+   Additional information on the OpenJPA project may be found at the project
+   web site:
+      http://openjpa.apache.org
+
+
+License
+-------
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements. See the NOTICE file distributed with this
+   work for additional information regarding copyright ownership. The ASF
+   licenses this file to you under the Apache License, Version 2.0 (the
+   "License"); you may not use this file except in compliance with the
+   License. You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+   WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+   License for the specific language governing permissions and limitations
+   under the License.
+
+   The license may also be found in LICENSE.txt included in each assembly.
+
+
+Notices
+-------
+   Copyright 2006,2012 The Apache Software Foundation.
+   Apache, the Apache feather logo and OpenJPA are trademarks of
+   The Apache Software Foundation.
+
+   This product includes software developed at
+   The Apache Software Foundation (http://www.apache.org/).
+
+   OpenJPA includes the persistence and orm schemas from the JPA specifications.
+   Copyright 2005-2009 Sun Microsystems, Inc. All rights reserved.
+   OpenJPA elects to include this software in this distribution under the
+   CDDL license.  You can obtain a copy of the License at:
+       https://glassfish.dev.java.net/public/CDDL+GPL.html
+   The source code is available at:
+       http://java.net/projects/glassfish
+
+   The complete list of notices can be found in NOTICE.txt included in each
+   assembly.
+
+
+Prerequisites
+-------------
+   OpenJPA requires Java SE 6 or higher and a relational 
+   database of some sort.
+
+
+Documentation
+-------------
+   If you have questions about OpenJPA, a good source of information is the
+   online product manual. You can find the manual for the current release as
+   well as older releases of OpenJPA at
+       http://openjpa.apache.org/documentation.html
+
+   If you can't find what you are looking for in the manual or would like more
+   clarification, please post to the OpenJPA development mailing list.
+   Information on all of the OpenJPA mailing lists may be found here:
+       http://openjpa.apache.org/mailing-lists.html
+
+
+Getting Involved
+----------------
+   The Apache OpenJPA project is being built by the open source community for
+   the open source community - we welcome your input and contributions!
+
+   What we are looking for
+        * Source code and fixes contributions
+        * Documentation assistance
+        * Product and feature suggestions
+        * Detailed and constructive feedback
+        * Articles and whitepapers
+
+   How do I contribute?
+        * To discuss Apache OpenJPA topics check out the mailing lists.
+        * Informal discussion also occurs on the #openjpa IRC channel on
+          freenode.net.
+        * Bugs and other issues can be posted on the issue tracker at
+          https://issues.apache.org/jira/browse/OPENJPA
+
+
+Included Changes in OpenJPA 2.4.2
+---------------------------------
+
+** Bug
+    * [OPENJPA-2245] - NotSerializableException when using a remote QueryCache and the Criteria API
+    * [OPENJPA-2631] - ClassCastException occurs when an equals comparison query is executed on an entity with an @EmbeddedId that contains more than one field.
+    * [OPENJPA-2632] - select new not working if result class is not in same classloader
+    * [OPENJPA-2636] - Custom plugins (e.g. JDBCListener, DBDictionary) can cause Classloader leaks.
+    * [OPENJPA-2640] - Cannot use custom DBDictionary with Maven plugin
+    * [OPENJPA-2650] - When SchemaFactory and useSchemaName=false is set, a schema name is incorrectly used.
+    * [OPENJPA-2651] - IDs of entities are incorrectly assigned when @SqlResultSetMapping is used with inheritance and a ManyToOne relationship.
+    * [OPENJPA-2672] - ConfigurationImpl.loadGlobals() has java.util.ConcurrentModificationException vulnerability
+    * [OPENJPA-2674] - JarFile is not closed
+    * [OPENJPA-2675] - Missing check for null parameter in equals()
+    * [OPENJPA-2676] - openjpa relies on default locale
+    * [OPENJPA-2684] - Persistence entities not recognized in Wildfly 10 if in a JAR
+
+** Improvement
+    * [OPENJPA-2660] - Resolve Maven warnings

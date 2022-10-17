@@ -1,0 +1,2 @@
+exclude-was-uow.diff
+openjpa-xmlstore-no-tests.patch

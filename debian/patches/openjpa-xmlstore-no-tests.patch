@@ -1,0 +1,52 @@
+From: Markus Koschany <apo@debian.org>
+Date: Fri, 23 Jun 2017 15:03:42 +0200
+Subject: openjpa-xmlstore no tests
+
+The openjpa-xmlstore module will FTBFS because it requires a test jar which we
+don't build since the tests are skipped.
+---
+ openjpa-xmlstore/pom.xml | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+
+diff --git a/openjpa-xmlstore/pom.xml b/openjpa-xmlstore/pom.xml
+index b3958cb..4bde5b2 100644
+--- a/openjpa-xmlstore/pom.xml
++++ b/openjpa-xmlstore/pom.xml
+@@ -59,7 +59,7 @@
+ 
+     <build>
+         <plugins>
+-            <!-- Extract the common test support files from o-p-j-tests.jar -->
++            <!-- Extract the common test support files from o-p-j-tests.jar
+             <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-dependency-plugin</artifactId>
+@@ -86,7 +86,7 @@
+                 </executions>
+             </plugin>
+ 
+-            <!-- new way of using openjpa-maven-plugin to enhance classes -->
++            new way of using openjpa-maven-plugin to enhance classes
+             <plugin>
+                 <groupId>org.apache.openjpa</groupId>             
+                 <artifactId>openjpa-maven-plugin</artifactId>
+@@ -106,7 +106,7 @@
+                     </execution>
+                 </executions>
+                 <dependencies>
+-                    <!-- use o-p-j instead of openjpa to avoid cyclical dependency in maven graph -->
++                    use o-p-j instead of openjpa to avoid cyclical dependency in maven graph
+                     <dependency>
+                         <groupId>org.apache.openjpa</groupId>
+                         <artifactId>openjpa-persistence-jdbc</artifactId>
+@@ -135,9 +135,8 @@
+                         </property>
+                     </systemProperties>
+                 </configuration>
+-            </plugin>
++            </plugin>-->
+         </plugins>
+     </build>
+-
+ </project>
+ 

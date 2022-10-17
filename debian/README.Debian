@@ -1,0 +1,20 @@
+------------------
+openjpa for Debian
+------------------
+
+
+*** Removal of functionalities ***
+
+Apache OpenJPA 2.0 Debian package doesn't contain some of the functionalities
+of upstream binary releases.
+
+Here is a list of excluded files regarding original content of Apache OpenJPA
+2.0.0:
+
+* libopenjpa-java
+  [non-free] IBM Websphere Application Server is non-free software
+    org/apache/openjpa/ee/WASRegistryManagedRuntime.class
+    org/apache/openjpa/ee/AutomaticManagedRuntime.class
+
+ -- Miguel Landaeta <miguel@miguel.cc>  Fri, 28 May 2010 23:30:28 -0430
+

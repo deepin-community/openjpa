@@ -1,0 +1,13 @@
+com.ibm.websphere websphere_uow_api * * * *
+javax.xml.bind * * * * *
+com.sun.xml.bind * * * * *
+simple-jndi simple-jndi * * * *
+org.apache.ant ant-jsch * * * *
+org.apache.openjpa openjpa-maven-plugin * * * *
+org.apache.openjpa openjpa-persistence-jdbc * * * *
+org.codehaus.mojo ianal-maven-plugin * * * *
+org.codehaus.mojo buildnumber-maven-plugin * * * *
+org.apache.maven.plugins maven-checkstyle-plugin * * * *
+org.apache.rat apache-rat-plugin * * * *
+org.apache.maven.plugins maven-enforcer-plugin * * * *
+org.apache.maven.plugins maven-source-plugin * * * *

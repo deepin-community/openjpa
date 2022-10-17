@@ -1,0 +1,160 @@
+openjpa (2.4.2-6) unstable; urgency=medium
+
+  * Team upload.
+  * Fixed the build failure with Java 11 (Closes: #911190)
+  * Standards-Version updated to 4.2.1
+  * Use salsa.debian.org Vcs-* URLs
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Wed, 17 Oct 2018 01:15:26 +0200
+
+openjpa (2.4.2-5) unstable; urgency=medium
+
+  * Team upload.
+  * Declare Breaks and Replaces relation. (Closes: #901045)
+
+ -- Markus Koschany <apo@debian.org>  Fri, 08 Jun 2018 15:30:30 +0200
+
+openjpa (2.4.2-4) unstable; urgency=medium
+
+  * Team upload.
+  * Switch to compat level 11.
+  * Declare compliance with Debian Policy 4.1.4.
+  * Drop libopenjpa-java-doc and work around the FTBFS with Java 9.
+    (Closes: #893384)
+  * Use source/target 1.7.
+
+ -- Markus Koschany <apo@debian.org>  Tue, 24 Apr 2018 12:08:51 +0200
+
+openjpa (2.4.2-3) unstable; urgency=medium
+
+  * Team upload.
+  * Added the missing libxbean-java dependency on the binary package
+  * Depend on geronimo-jta-1.2-spec instead of geronimo-jta-1.1-spec
+  * Depend on geronimo-validation-1.1-spec instead of
+    geronimo-validation-1.0-spec
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 04 Dec 2017 14:36:29 +0100
+
+openjpa (2.4.2-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Miguel Landaeta ]
+  * Remove myself from uploaders list. (Closes: #871881)
+  * Wrap and sort dependencies lists.
+  * Update copyright info.
+
+  [ Emmanuel Bourg ]
+  * Added the missing build dependency on libxbean-java
+  * Removed the build dependency on libmaven-dependency-plugin-java,
+    libmaven-enforcer-plugin-java and libmaven-install-plugin-java
+  * Standards-Version updated to 4.1.0
+
+  [ tony mancill ]
+  * Add ant-jsch to maven.ignoreRules
+  * Bump Standards-Version to 4.1.2
+
+ -- tony mancill <tmancill@debian.org>  Sun, 03 Dec 2017 18:13:19 -0800
+
+openjpa (2.4.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 2.4.2.
+  * Use --download-current-version option for uscan.
+  * Declare compliance with Debian Policy 4.0.0.
+  * Use https for Format field.
+  * Remove preserve file. It does nothing.
+  * Drop fix_poms.diff, java8-compatibility.patch and
+    fix-compilation-error.patch. They are not needed anymore.
+  * poms: Remove the --no-parent option from various modules and pass the
+    required versions.
+  * Build-depend on junit4 and ant-contrib.
+  * Add openjpa-xmlstore-no-tests.patch and prevent a FTBFS in openjpa-xmlstore
+    due to a missing test jar.
+
+ -- Markus Koschany <apo@debian.org>  Fri, 23 Jun 2017 15:16:16 +0200
+
+openjpa (2.4.0-4) unstable; urgency=medium
+
+  * Team upload.
+  * maven.rules: Remove substitution rule for postgresql. (Closes: #852254)
+  * Switch to compat level 10.
+
+ -- Markus Koschany <apo@debian.org>  Mon, 23 Jan 2017 20:55:42 +0100
+
+openjpa (2.4.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Declare compliance with Debian Policy 3.9.8.
+  * Vcs-fields: Use https.
+  * Switch from cdbs to dh sequencer.
+  * Build-Depend on libservlet3.1-java and update maven.rules.
+    (Closes: #830497) Thanks to Daniel Schepler for the report.
+
+ -- Markus Koschany <apo@debian.org>  Fri, 15 Jul 2016 10:53:08 +0200
+
+openjpa (2.4.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Added the missing build dependency on libregexp-java
+  * Removed the unused dependency on glassfish-javaee
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Fri, 28 Aug 2015 22:16:33 +0200
+
+openjpa (2.4.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+    - Removed 706176_hsql-upstream-fix-2390-2391.diff (fixed upstream)
+    - Refreshed the patches
+    - Added a patch fixing the compatibility issues with Java 8
+      (Closes: #750753)
+  * debian/control: Standards-Version updated to 3.9.6 (no changes)
+  * debian/watch: Watch the release tags on Github
+  * Use XZ compression for the upstream tarball
+  * Switch to debhelper level 9
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Fri, 29 May 2015 16:41:09 +0200
+
+openjpa (2.2.2-1) unstable; urgency=low
+
+  [ Miguel Landaeta ]
+  * New upstream release. (Closes: #716937).
+    This release includes a fix for security issue CVE-2013-1768
+    that allowed remote attackers to execute arbitrary code.
+  * Switch build system from Ant to Maven since that was upstream use.
+    Replace debhelper with cdbs.
+    Several Maven plugins and libraries were added to dependency lists.
+  * Bump Standards-Version to 3.9.4. No changes were required.
+  * Added Stephen Nelson to Uploaders list.
+  * Drop java7-compat.diff patch, it's not needed anymore.
+  * Use canonical form of Vcs-* fields.
+  * Remove obsolete DMUA header.
+  * OpenJPA user manual is no longer included in -doc.
+
+  [ Stephen Nelson ]
+  * Fix FTBFS cause by libhsqldb-java API changes. (Closes: #706176).
+
+ -- Miguel Landaeta <miguel@miguel.cc>  Sun, 06 Oct 2013 20:39:22 -0300
+
+openjpa (2.0.1-1) unstable; urgency=low
+
+  [ Miguel Landaeta ]
+  * New upstream release.
+  * Bump Standards-Version to 3.9.3. No changes were required.
+  * Include the complete text of BSD license in debian/copyright file.
+  * Fix FTBFS with OpenJDK 7.
+  * Replace dependencies on libpg-java with libpostgresql-jdbc-java.
+    (Closes: #659398).
+  * Update copyright file.
+
+  [ tony mancill ]
+  * Set DMUA flag.
+
+ -- Miguel Landaeta <miguel@miguel.cc>  Mon, 25 Jun 2012 21:31:26 -0430
+
+openjpa (2.0.0-1) unstable; urgency=low
+
+  * Initial release. (Closes: #581855)
+
+ -- Miguel Landaeta <miguel@miguel.cc>  Wed, 02 Jun 2010 21:04:22 -0430

@@ -1,0 +1,65 @@
+From: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Date: Fri, 23 Jun 2017 15:01:11 +0200
+Subject: exclude-was-uow
+
+Don't try to run proprietary Webshpere code.
+---
+ .../openjpa/ee/WASRegistryManagedRuntime.java      | 38 +---------------------
+ 1 file changed, 1 insertion(+), 37 deletions(-)
+
+diff --git a/openjpa-kernel/src/main/java/org/apache/openjpa/ee/WASRegistryManagedRuntime.java b/openjpa-kernel/src/main/java/org/apache/openjpa/ee/WASRegistryManagedRuntime.java
+index 4220609..fb834c6 100644
+--- a/openjpa-kernel/src/main/java/org/apache/openjpa/ee/WASRegistryManagedRuntime.java
++++ b/openjpa-kernel/src/main/java/org/apache/openjpa/ee/WASRegistryManagedRuntime.java
+@@ -18,12 +18,6 @@
+  */
+ package org.apache.openjpa.ee;
+ 
+-import com.ibm.wsspi.uow.UOWAction;
+-import com.ibm.wsspi.uow.UOWActionException;
+-import com.ibm.wsspi.uow.UOWException;
+-import com.ibm.wsspi.uow.UOWManager;
+-import com.ibm.wsspi.uow.UOWManagerFactory;
+-
+ /**
+  * WASRegistryManagedRuntime provides WebSphere specific extensions to
+  * {@link RegistryManagedRuntime}. Currently these extensions consist of using
+@@ -38,37 +32,7 @@ public class WASRegistryManagedRuntime extends RegistryManagedRuntime {
+      */
+     public void doNonTransactionalWork(Runnable runnable)
+             throws RuntimeException, UnsupportedOperationException {
+-        try {
+-            UOWManagerFactory.getUOWManager().runUnderUOW(
+-                UOWManager.UOW_TYPE_LOCAL_TRANSACTION, false,
+-                new DelegatingUOWAction(runnable));
+-        }
+-        catch(UOWActionException e ) {
+-            RuntimeException re = new RuntimeException(e.getMessage());
+-            re.initCause(e);
+-            throw re;
+-        }
+-        catch(UOWException e ) {
+-            RuntimeException re = new RuntimeException(e.getMessage());
+-            re.initCause(e);
+-            throw re;
+-        }
++        throw new RuntimeException("Not implemented");
+     }
+ 
+-    
+-    /**
+-     * Delegate for the WebSphere proprietary UOWAction interface. Enables a 
+-     * {@link Runnable} to be passed in to the WebSphere UOWManager.  
+-     */
+-    class DelegatingUOWAction implements UOWAction {
+-        Runnable _del;
+-
+-        public DelegatingUOWAction(Runnable delegate) {
+-            _del = delegate;
+-        }
+-
+-        public void run() throws Exception {
+-            _del.run();
+-        }
+-    }
+ }
